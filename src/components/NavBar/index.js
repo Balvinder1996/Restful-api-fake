@@ -3,30 +3,27 @@ import '../NavBar/navbar.scss'
 
 const Navbar = () => {
     const collapse = () => {
-        document.getElementById('collapse').classList.toggle('mobile-nav');
-        document.getElementById('collapse').classList.toggle('is-active');
+        document.getElementById('collapse').classNameList.toggle('mobile-nav');
+        document.getElementById('collapse').classNameList.toggle('is-active');
     }
     return (
         <>
-            
-               
-                    <nav class="navbar">
-                        <h3 className="navbar-brand">Shoppify </h3>
-                        <div class="menu-toggle" id="mobile-menu">
-                        <i class="fas fa-bars" onClick={collapse}/>
-                        </div>
-                        <ul class="nav no-search" id="collapse">
-                            <li class="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
-                            <li class="nav-item"><Link className="navbar-linkes" to='/products'>Products</Link></li>
-                            <li class="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
-                            <li class="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
-                            <li class="nav-item"><Link className="navbar-linkes" to='/login'>Login</Link></li>
+            <nav className="navbar">
+                <h3 class="navbar-brand">Shoppify </h3>
+                <div className="menu-toggle" id="mobile-menu">
+                    <i className="fas fa-bars" onClick={collapse} />
+                </div>
+                <ul className="nav no-search" id="collapse">
+                    <li className="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
+                    <li className="nav-item"><Link className="navbar-linkes" to='/products'>Products</Link></li>
+                    <li className="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
+                    <li className="nav-item"><Link className="navbar-linkes" to='/'>Home</Link></li>
+                    <li className="nav-item"><Link className="navbar-linkes" to='/login'>Login</Link></li>
+                </ul>
+            </nav>
 
-                        </ul>
-                    </nav>
-                
 
-          
+
         </>
     )
 }

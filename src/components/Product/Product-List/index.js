@@ -62,8 +62,8 @@ const Product_list = () => {
                                             {Product_data.map((data) => {
                                                 return (
                                                     <>
-                                                        <div className="col-md-3   pt-30">
-                                                            <div className="card card_shadow">
+                                                        <div className="col-md-3   pt-30" key={data.id}>
+                                                            <div className="card card_shadow"  >
                                                                 <img src={data.image} className="img-height-card" />
                                                                 <div className="card-body parent">
                                                                     <h5 className="title bold">{trimmed_string(data.title)}</h5>
