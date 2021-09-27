@@ -1,0 +1,71 @@
+// sass for the padding
+@for $i from 1 through 50 {
+    .px-#{$i}
+    {
+       padding-left:#{$i}px;
+       padding-right:#{$i}px
+    }
+  } @for $i from 1 through 50 {
+    .pr-#{$i}
+    {
+       padding-right:#{$i}px;
+    }
+  }
+  @for $i from 1 through 50 {
+    .pl-#{$i}
+    {
+       padding-left:#{$i}px;
+    }
+  }
+  @for $i from 1 through 50 {
+    .pt-#{$i}
+    {
+       padding-top:#{$i}px;
+    }
+  }
+  @for $i from 1 through 50 {
+    .pr-#{$i}
+    {
+       padding-bottom:#{$i}px;
+    }
+  }
+  // sass for the margins
+    @for $i from 1 through 50 {
+      .mx-#{$i}
+      {
+         margin-left:#{$i}px;
+         margin-right:#{$i}px
+      }
+    }
+    @for $i from 1 through 50 {
+      .ml-#{$i}
+      {
+         margin-left:#{$i}px;
+      }
+    }
+    @for $i from 1 through 50 {
+      .mr-#{$i}
+      {
+         margin-right:#{$i}px;
+      }
+    }
+   
+    @for $i from 1 through 150 {
+      .mt-#{$i}
+      {
+         margin-top:#{$i}px;
+      }
+    }
+    @for $i from 1 through 50 {
+      .mb-#{$i}
+      {
+         margin-bottom:#{$i}px;
+      }
+    }
+  // letter spacing sass starts here
+  @for $i from 1 through 10 {
+    .letter-space-#{$i}
+    {
+       letter-spacing:#{$i}px;
+    }
+  }

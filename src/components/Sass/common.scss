@@ -1,0 +1,218 @@
+$theme_color:#991f53;
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+.container-fluid
+{
+    width: 100%;
+    padding-right: var(--bs-gutter-x,.75rem);
+    padding-left: var(--bs-gutter-x,.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+.row
+{
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) * -.5);
+    margin-left: calc(var(--bs-gutter-x) * -.5);
+}
+.row>* 
+{
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-gutter-y);
+}
+
+@media (min-width: 768px){
+.col-md-2
+{
+    flex: 0 0 auto;
+    width: 16.66666667%;
+}
+.col-md-3 {
+    flex: 0 0 auto;
+    width: 25%;
+}
+.col-md-6
+{
+    flex: 0 0 auto;
+    width: 50%;
+}
+.col-md-8 {
+    flex: 0 0 auto;
+    width: 66.66666667%;
+}
+.col-md-4
+{
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+.col-md-10 {
+    flex: 0 0 auto;
+    width: 83.33333333%;
+}
+}
+// css for heading starts here
+h1, h2, h3, h4, h5, h6 
+{
+    margin-top: 0;
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+h1
+{
+    font-size: 2.5rem;
+}
+h2
+{
+    font-size: 2rem ;
+}
+h3
+{
+    font-size: 1.75rem;
+}
+h4
+{
+    font-size: 1.5rem;
+}
+h5
+{
+    font-size: 1rem;
+}
+// css for lable starts here
+.input-group
+{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    width: 100%;
+}
+input
+{
+    margin: 4px;
+    padding: 4px;
+    width: 15px ;
+    height: 15px;
+}
+.card
+{
+    position: relative;
+    height: 100%;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-body {
+    flex: 1 1 auto;
+    position:relative;
+    padding: 1rem 1rem;
+}
+@mixin img-fluid {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+.img-height-card
+{
+    @include img-fluid();
+    height: 200px;
+}
+.image-height-details
+{
+    @include img-fluid();
+    height: 60vh;
+}
+.btn
+{
+    background-color: $theme_color;
+    color:white;
+    background-position: right;
+    border:none;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.btn:active
+{
+    background-position:center;
+}
+.bold
+{
+    font-weight: bold;
+}
+.title
+{ 
+    font-size: 17px;
+}
+.sub-title
+{
+    font-size: 16px;
+}
+.star_icons
+{
+    color:$theme_color
+}
+.d-flex
+{
+    display: flex;
+}
+.justify-content-between
+{
+    justify-content: space-between;
+}
+.align-items-center
+{
+    align-items: center;
+}
+.justify-content-center
+{
+    justify-content: center;
+} 
+.parent
+{
+    position: relative !important;
+}
+.font-sm
+{
+    font-size: 18px;
+    text-align: justify;
+    line-height: 30px;
+}
+.text-grey
+{
+    color:grey
+} 
+::-webkit-scrollbar {
+    height: 8px;
+    width: 6px;
+    background:white;
+}
+
+::-webkit-scrollbar-thumb {
+   
+    background:$theme_color;
+    -webkit-border-radius: 1ex;
+}
+
+::-webkit-scrollbar-corner {
+    background: $theme_color;
+}
+

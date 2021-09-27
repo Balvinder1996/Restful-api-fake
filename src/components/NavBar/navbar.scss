@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", "Arial", sans-serif;
+}
+
+/* NAVIGATION */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    background-color: #991f53;
+}
+.navbar-brand {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    margin-left: 60px;
+}
+.navbar ul {
+    list-style: none;
+    z-index: 1;
+}
+.nav-item {
+    padding: 15px;
+    display: inline-block;
+}
+.fa-bars
+{
+    color:white;
+    font-size: 24px;
+}
+
+.navbar-linkes {
+    color: white;
+    font-size: 22x;
+    font-weight: 400;
+    text-decoration: none;
+    margin-right: 16px;
+    transition: color 0.3s ease-out;
+
+}
+
+.navbar-linkes:hover {
+    color: pink;
+}
+
+#search-icon {
+    font-size: 0.9rem;
+    margin-top: 3px;
+    margin-left: 15px;
+    transition: color 0.3s ease-out;
+}
+
+#search-icon:hover {
+    color: #3498db;
+    cursor: pointer;
+}
+.no-search {
+    transform: translate(0);
+    transition: transform 0.7s ease-in-out;
+}
+.search-input {
+    position: absolute;
+    top: -4px;
+    right: -125px;
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.6s ease;
+}
+
+.search-active {
+    opacity: 1;
+    z-index: 0;
+}
+
+input {
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-radius: 0; /* FOR SAFARI */
+    outline: 0;
+    padding: 5px;
+}
+
+/* MOBILE MENU & ANIMATION */
+.menu-toggle {
+    justify-self: end;
+    margin-right: 25px;
+    display: none;
+}
+.menu-toggle:hover {
+    cursor: pointer;
+}
+
+/* Media Queries */
+
+/* Mobile Devices - Phones/Tablets */
+
+@media only screen and (max-width: 720px) {
+    /* MOBILE NAVIGATION */
+
+    .navbar ul {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        justify-content: start;
+        top: 65px;
+        background-color: black;
+        width: 100%;
+        height: calc(100vh - 65px);
+        transform: translate(-101%);
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .navbar li {
+        padding: 15px;
+    }
+
+    .navbar li:first-child {
+        margin-top: 50px;
+    }
+
+    .navbar li a {
+        font-size: 1rem;
+    }
+
+    .menu-toggle,
+    .bar {
+        display: block;
+        cursor: pointer;
+    }
+
+    .mobile-nav {
+        transform: translate(0%) !important;
+    }
+}
