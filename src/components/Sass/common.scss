@@ -122,8 +122,8 @@ input
 }
 @mixin img-fluid {
     width: 100%;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 65px;
+    padding-right: 65px;
     padding-top: 25px;
     padding-bottom: 15px;
 }
@@ -215,4 +215,9 @@ input
 ::-webkit-scrollbar-corner {
     background: $theme_color;
 }
-
+.wrap-text-1 {
+    display: -webkit-box !important;
+    -webkit-line-clamp: 1 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+}

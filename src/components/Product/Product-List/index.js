@@ -66,7 +66,7 @@ const Product_list = () => {
                                                             <div className="card card_shadow"  >
                                                                 <img src={data.image} className="img-height-card" />
                                                                 <div className="card-body parent">
-                                                                    <h5 className="title bold">{trimmed_string(data.title)}</h5>
+                                                                    <h5 className="title bold wrap-text-1">{data.title}</h5>
                                                                     <h5 className="sub-title bold">Rs {data.price} /-</h5>
                                                                     <div className="d-flex justify-content-between align-items-center">
                                                                         <h5>
