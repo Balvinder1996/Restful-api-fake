@@ -30,7 +30,7 @@ const Product_Details = (props) => {
        }, 5000);
     return (
         <>
-            <section className="mt-15">
+            <section className="mt-60 pt-40">
                 <div className="container-fluid">
                     {isLoading ?
                         <div className="height-100">
