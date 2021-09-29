@@ -77,7 +77,9 @@ const Product_Details = (props) => {
                                                 {rating.rate}
                                                 <span className="text-grey">({rating.count})</span>
                                             </h4>
-                                            <Link to="/add-card"><button className="btn mt-20">Add to card</button></Link>
+                                           <div className="mt-30">
+                                           <Link  to="/add-card" className="animated_link "><span className="animated_span ">Add to card</span></Link> 
+                                           </div>
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +108,7 @@ const Product_Details = (props) => {
                                                                             <h5>
                                                                                 <i className="fa fa-star star_icons" aria-hidden="true" />{product_data.rating.rate}
                                                                             </h5>
-                                                                            <Link to={`/product-details/${product_data.id}`}><button className="btn">view</button></Link>
+                                                                            <Link  to={`/product-details/${product_data.id}`} className="animated_link"><span className="animated_span">view</span></Link> 
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -118,7 +120,8 @@ const Product_Details = (props) => {
                                                     <div className="card card_shadow d-flex justify-content-center align-items-center" style={{height:"100%"}}>
                                                         <div className="text-centered">
                                                         <p className="mt-12" >Total products showing={similarProduct.length}</p>
-                                                        <h5><button className="btn mt-12" onClick={back_To_top}>Back to top</button></h5>
+                                                        <p className="mt-20"> back to top<i class="fa fa-arrow-up uparrow_icon mx-12" onClick={back_To_top} aria-hidden="true"></i></p>
+                                                        
                                                          </div>
                                                     </div>
                                                 </div>

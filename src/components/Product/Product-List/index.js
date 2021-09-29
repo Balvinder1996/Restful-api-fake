@@ -11,7 +11,7 @@ const Product_list = () => {
     const [Product_data, setProduct_data] = useState([]);
     const [isLoading, set_isloading] = useState(false)
     useEffect(() => {
-      
+
         const data = Axios.get('/products')
             .then(res => {
                 setProduct_data(res.data);
@@ -25,7 +25,7 @@ const Product_list = () => {
     const handleOnChange = (value) => {
         setVolume(value)
     }
-  
+
     return (
         <>
             <section className="mt-65">
@@ -69,7 +69,7 @@ const Product_list = () => {
                                                                         <h5>
                                                                             <i className="fa fa-star star_icons" aria-hidden="true" />{data.rating.rate}
                                                                         </h5>
-                                                                        <Link to={`/product-details/${data.id}`}><button className="btn">view</button></Link>
+                                                                        <Link to={`/product-details/${data.id}`} className="animated_link"><span className="animated_span">view</span></Link> 
                                                                     </div>
                                                                 </div>
                                                             </div>

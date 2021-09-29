@@ -142,9 +142,9 @@ input {
     }
     .image-height-details {
         @include img-fluid();
-        height: 55vh;
-        padding-left: 80px;
-        padding-right: 80px;
+        height: 360px;
+        padding-left: 120px;
+        padding-right: 120px;
     }
     .lg-screen-centering
     {
@@ -166,9 +166,9 @@ input {
     }
     .image-height-details {
         @include img-fluid();
-        height: 30vh;
-        padding-left: 60px;
-        padding-right: 60px;
+        height: 300px;
+        padding-left: 80px;
+        padding-right: 80px;
     }
     .lg-screen-centering
     {
@@ -190,7 +190,7 @@ input {
     }
     .image-height-details {
         @include img-fluid();
-        height: 40vh;
+        height:300px;
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -209,10 +209,9 @@ input {
     }
     .image-height-details {
         @include img-fluid();
-        height: 60vh;
-        height: 40vh;
-        padding-left: 40px;
-        padding-right: 40px;
+        height: 280px;
+        padding-left: 60px;
+        padding-right: 60px;
         
     }
 }
@@ -231,7 +230,7 @@ input {
     }
     .image-height-details {
         @include img-fluid();
-        height: 40vh;
+        height: 200px;
         padding-left: 40px;
         padding-right: 40px;
     }
@@ -323,5 +322,65 @@ input {
 .text-centered
 {
     text-align: center;
+}
+
+.animated_link {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #333;
+    border: 2px solid rgba(17, 16, 16, 0.4);
+    text-align: center;
+    position: relative;
+    transition: all 0.35s;
+}
+
+.animated_span {
+    position: relative;
+    z-index: 2;
+}
+
+.animated_link:after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #7d3e87;
+    transition: all 0.35s;
+}
+
+.animated_link:hover {
+    color: #fff;
+}
+
+.animated_link:hover:after {
+    width: 100%;
+}
+.uparrow_icon
+{   
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    background-color:grey;
+    color: white;
+    border-radius: 100%;
+    font-size: 25px;
+}
+.uparrow_icon:hover
+{   
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 7px;
+    padding-bottom: 8px;
+    background-color: $theme_color;
+    color: white;
+    border-radius: 100%;
+    font-size: 25px;
 }
 
