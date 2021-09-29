@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react'
 import Axios from 'axios'
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
+import { ModalBody } from "react-bootstrap";
 
 const Product_Details = (props) => {
     const { identity } = useParams()
@@ -46,6 +47,10 @@ const Product_Details = (props) => {
             }
         }
     }
+    const back_To_top=()=>
+    {
+        window.scrollTo({top: 0, behavior: 'smooth'});
+    }
     return (
         <>
             <section className="mt-60 pt-40">
@@ -86,7 +91,7 @@ const Product_Details = (props) => {
                                         </div>
                                         :
                                         <div className="container-fluid mb-40">
-                                            <div className="row lg-screen-centering">
+                                            <div className="row">
                                                 {
                                                     similarProduct.map((product_data) => {
                                                         console.log(product_data.image)
@@ -109,6 +114,14 @@ const Product_Details = (props) => {
                                                         )
                                                     })
                                                 }
+                                                <div className="col-md-3 pt-30">
+                                                    <div className="card card_shadow d-flex justify-content-center align-items-center" style={{height:"100%"}}>
+                                                        <div className="text-centered">
+                                                        <p className="mt-12" >Total products showing={similarProduct.length}</p>
+                                                        <h5><button className="btn mt-12" onClick={back_To_top}>Back to top</button></h5>
+                                                         </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                 }

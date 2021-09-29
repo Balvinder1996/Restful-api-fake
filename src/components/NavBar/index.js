@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <>
             <nav className="navbar">
-                <h3 class="navbar-brand">Shoppify </h3>
+                <Link to='/' className='navbar-brand'>Shoppify</Link>
                 <div className="menu-toggle" id="mobile-menu">
                     <i className="fas fa-bars" onClick={collapse} />
                 </div>
