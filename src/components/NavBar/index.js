@@ -1,7 +1,13 @@
+import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import '../NavBar/navbar.scss'
 
 const Navbar = () => {
+    useEffect(() => {
+        setTimeout(() => {
+            window.confirm("Allow for location for better experience")
+        }, 1000);
+    }, [])
     const collapse = () => {
         document.getElementById('collapse').classList.toggle('mobile-nav');
         // document.getElementById('collapse').classNameList.toggle('is-active');
@@ -18,9 +24,6 @@ const Navbar = () => {
                     <li className="nav-item"><Link className="navbar-linkes" to='/login'>Login</Link></li>
                 </ul>
             </nav>
-
-
-
         </>
     )
 }

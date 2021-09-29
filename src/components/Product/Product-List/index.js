@@ -11,6 +11,7 @@ const Product_list = () => {
     const [Product_data, setProduct_data] = useState([]);
     const [isLoading, set_isloading] = useState(false)
     useEffect(() => {
+      
         const data = Axios.get('/products')
             .then(res => {
                 setProduct_data(res.data);
@@ -24,11 +25,7 @@ const Product_list = () => {
     const handleOnChange = (value) => {
         setVolume(value)
     }
-    const trimmed_string = (str) => {
-        let separator = '';
-        if (str.length <= 40) return str;
-        return str.substr(0, str.lastIndexOf(separator, 40));
-    }
+  
     return (
         <>
             <section className="mt-65">
@@ -53,7 +50,7 @@ const Product_list = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-10 bg-light-grey">
+                        <div className="col-md-10 bg-light-grey mb-40">
                             {isLoading ?
                                 <>
                                     <div className="container-fluid">
@@ -62,7 +59,7 @@ const Product_list = () => {
                                             {Product_data.map((data) => {
                                                 return (
                                                     <>
-                                                        <div className="col-md-3   pt-30" key={data.id}>
+                                                        <div className="col-md-4 col-lg-3  col-sm-6  pt-30" key={data.id}>
                                                             <div className="card card_shadow"  >
                                                                 <img src={data.image} className="img-height-card" />
                                                                 <div className="card-body parent">
@@ -72,7 +69,7 @@ const Product_list = () => {
                                                                         <h5>
                                                                             <i className="fa fa-star star_icons" aria-hidden="true" />{data.rating.rate}
                                                                         </h5>
-                                                                        <Link to="product-details"><button className="btn">view</button></Link>
+                                                                        <Link to={`/product-details/${data.id}`}><button className="btn">view</button></Link>
                                                                     </div>
                                                                 </div>
                                                             </div>

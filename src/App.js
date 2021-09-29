@@ -5,6 +5,7 @@ import Navbar from './components/NavBar';
 import Home from './components/Home';
 import Product_list from './components/Product/Product-List';
 import Product_Details from './components/Product/Product-details';
+import Login_auth from './components/Login-auth';
 Axios.defaults.baseURL='https://fakestoreapi.com';
 function App() {
   return (
@@ -12,9 +13,13 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          {/* <Route exact path="/" component={Home} /> */}
           <Route exact path="/" component={Product_list} />
-          <Route exact path="/product-details" component={Product_Details} />
+          {/* <Route exact path="/product-details/:identity" component={Product_Details} /> */}
+          <Route exact path="/login" component={Login_auth} />
+          <Route
+   render={(props) => <Product_Details {...props} />}
+   path="/product-details/:identity/"
+/>
         </Switch>
       </Router>
     </>
