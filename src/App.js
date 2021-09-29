@@ -2,7 +2,6 @@ import './App.scss';
 import Axios from 'axios'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navbar from './components/NavBar';
-import Home from './components/Home';
 import Product_list from './components/Product/Product-List';
 import Product_Details from './components/Product/Product-details';
 import Login_auth from './components/Login-auth';
