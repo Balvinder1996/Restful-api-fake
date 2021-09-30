@@ -13,12 +13,8 @@ function App() {
         <Navbar />
         <Switch>
           <Route exact path="/" component={Product_list} />
-          {/* <Route exact path="/product-details/:identity" component={Product_Details} /> */}
+          <Route exact path="/product-details/:identity" component={Product_Details} />
           <Route exact path="/login" component={Login_auth} />
-          <Route
-   render={(props) => <Product_Details {...props} />}
-   path="/product-details/:identity/"
-/>
         </Switch>
       </Router>
     </>

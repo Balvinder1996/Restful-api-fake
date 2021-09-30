@@ -29,7 +29,8 @@ const Login_auth = (props) => {
             sessionStorage.setItem("username", username)
             sessionStorage.setItem("pass", password)
             toast.success("registration successful !")
-            setLogin_state(true)
+            setLogin_state(true);
+            document.getElementById("form").reset()
         }
         else {
             toast.error("password does not match with confirm password")
@@ -54,7 +55,7 @@ const Login_auth = (props) => {
         const pass=sessionStorage.getItem("pass")
         if(auth.login_username==username && auth.login_password==pass)
         {
-            toast("login done")
+            toast.success("successfully login")
            setTimeout(() => {
             history.push("/");
            }, 1000);
@@ -65,6 +66,11 @@ const Login_auth = (props) => {
         }
     }
     const [login_state, setLogin_state] = useState(true)
+    const login_switch=()=>
+    {
+        setLogin_state(true);
+        document.getElementById("form").reset()
+    }
     return (
         <>
             <ToastContainer />
@@ -80,13 +86,14 @@ const Login_auth = (props) => {
                 {
                     login_state ?
                         <div class="login-box pt-30">
-                            <form onSubmit={login}>
+                            <form onSubmit={login} id="form">
                                 <div class="login">
                                     <h1>LogIn</h1>
                                     <input id="username"
                                         type="text"
                                         placeholder="Username"
                                         autoComplete="off"
+                                    
                                         name="login_username"
                                         onChange={login_state_update}
                                         required />
@@ -121,7 +128,7 @@ const Login_auth = (props) => {
                         </div>
                         :
                         <div class="login-box pt-30">
-                            <form onSubmit={registration} >
+                            <form onSubmit={registration} id="form" >
                                 <div class="login">
                                     <h1>Registration</h1>
                                     <input id="username"
@@ -166,8 +173,7 @@ const Login_auth = (props) => {
                                     </label>
                                     <button className="mt-10 mb-10" type="submit">Register</button>
                                     <div className="mt-10">
-                                        <p className="theme_color pointer-cursor "
-                                            onClick={() => { setLogin_state(true) }} >Have an account?</p>
+                                        <p className="theme_color pointer-cursor " onClick={login_switch}>Have an account?</p>
                                     </div>
                                 </div>
                             </form>

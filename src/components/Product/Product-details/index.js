@@ -17,39 +17,35 @@ const Product_Details = (props) => {
         const data = Axios.get(`products/${identity}`)
             .then(res => {
                 setProduct_data(res.data);
-                set_isloading(false)
                 get_category(res.data.category)
+                set_isloading(false)
             })
             .catch(err => {
                 console.error(err);
             });
-    }, [props.match.params.identity]);
+    }, [identity]);
     const get_category = (category) => {
         const similar_product = Axios.get(`products/category/${category}`)
             .then(res => {
-                // let array_filtered=filteredarray(res.data)
-                // console.log(array_filtered,"this");
-                const filtered_Array=filteredarray(res.data);
+                const filtered_Array = filteredarray(res.data);
                 set_similarProducts(res.data)
                 set_Product_slider_loading(false)
 
             }).catch(err => { console.log(err) })
     }
-    const filteredarray=(data)=>
-    {
-        console.log(data,"this is data")
-        const received_data=data
-        for( var i = 0; i < received_data.length; i++){ 
-        console.log(identity)
-            if ( received_data[i].id == identity) { 
-               const newarray= received_data.splice(i, 1);
-               return received_data
+    const filteredarray = (data) => {
+        console.log(data, "this is data")
+        const received_data = data
+        for (var i = 0; i < received_data.length; i++) {
+            console.log(identity)
+            if (received_data[i].id == identity) {
+                const newarray = received_data.splice(i, 1);
+                return received_data
             }
         }
     }
-    const back_To_top=()=>
-    {
-        window.scrollTo({top: 0, behavior: 'smooth'});
+    const back_To_top = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     return (
         <>
@@ -77,9 +73,9 @@ const Product_Details = (props) => {
                                                 {rating.rate}
                                                 <span className="text-grey">({rating.count})</span>
                                             </h4>
-                                           <div className="mt-30">
-                                           <Link  to="/add-card" className="animated_link "><span className="animated_span ">Add to card</span></Link> 
-                                           </div>
+                                            <div className="mt-30">
+                                                <Link to="/add-card" className="animated_link "><span className="animated_span ">Add to card</span></Link>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -108,7 +104,7 @@ const Product_Details = (props) => {
                                                                             <h5>
                                                                                 <i className="fa fa-star star_icons" aria-hidden="true" />{product_data.rating.rate}
                                                                             </h5>
-                                                                            <Link  to={`/product-details/${product_data.id}`} className="animated_link"><span className="animated_span">view</span></Link> 
+                                                                            <Link to={`/product-details/${product_data.id}`} onClick={() => { set_isloading(true);set_Product_slider_loading(true) }} className="animated_link"><span className="animated_span">view</span></Link>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -117,12 +113,12 @@ const Product_Details = (props) => {
                                                     })
                                                 }
                                                 <div className="col-md-3 pt-30">
-                                                    <div className="card card_shadow d-flex justify-content-center align-items-center" style={{height:"100%"}}>
+                                                    <div className="card card_shadow d-flex justify-content-center align-items-center" style={{ height: "100%" }}>
                                                         <div className="text-centered">
-                                                        <p className="mt-12" >Total products showing={similarProduct.length}</p>
-                                                        <p className="mt-20"> back to top<i class="fa fa-arrow-up uparrow_icon mx-12" onClick={back_To_top} aria-hidden="true"></i></p>
-                                                        
-                                                         </div>
+                                                            <p className="mt-12" >Total products showing={similarProduct.length}</p>
+                                                            <p className="mt-20"> back to top<i class="fa fa-arrow-up uparrow_icon mx-12" onClick={back_To_top} aria-hidden="true"></i></p>
+
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
