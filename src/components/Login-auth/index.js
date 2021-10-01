@@ -49,25 +49,22 @@ const Login_auth = (props) => {
             [e.target.name]: e.target.value
         }))
     }
-    const login = (event,props) => {
+    const login = (event, props) => {
         event.preventDefault();
-        const username=sessionStorage.getItem("username")
-        const pass=sessionStorage.getItem("pass")
-        if(auth.login_username==username && auth.login_password==pass)
-        {
+        const username = sessionStorage.getItem("username")
+        const pass = sessionStorage.getItem("pass")
+        if (auth.login_username == username && auth.login_password == pass) {
             toast.success("successfully login")
-           setTimeout(() => {
-            history.push("/");
-           }, 1000);
+            setTimeout(() => {
+                history.push("/");
+            }, 1000);
         }
-        else
-        {
+        else {
             toast.error("invalid credentials")
         }
     }
     const [login_state, setLogin_state] = useState(true)
-    const login_switch=()=>
-    {
+    const login_switch = () => {
         setLogin_state(true);
         document.getElementById("form").reset()
     }
@@ -75,14 +72,6 @@ const Login_auth = (props) => {
         <>
             <ToastContainer />
             <div class="container-login">
-                <div class="header-login">
-                    <div class="header-login-box">
-                        <span class="header-text-position">
-                            <a href="#">&nbsp;<i class="fa fa-user-plus"></i>&nbsp;&nbsp;Register</a>
-                        </span>
-                        <a href="#"><i class="fa fa-question"></i>&nbsp;&nbsp;Forgot Password?</a>
-                    </div>
-                </div>
                 {
                     login_state ?
                         <div class="login-box pt-30">
@@ -93,7 +82,7 @@ const Login_auth = (props) => {
                                         type="text"
                                         placeholder="Username"
                                         autoComplete="off"
-                                    
+
                                         name="login_username"
                                         onChange={login_state_update}
                                         required />

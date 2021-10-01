@@ -111,7 +111,7 @@ input {
     width: 15px;
     height: 15px;
 }
-.cardedfg {
+.card {
     position: relative;
     height: 100%;
     flex-direction: column;
@@ -205,7 +205,7 @@ input {
     }
     .img-height-card {
         @include img-fluid();
-        height: 200px;
+        height: 320px;
     }
     .image-height-details {
         @include img-fluid();
@@ -215,7 +215,7 @@ input {
         
     }
 }
-@media only screen and (max-width: 300px)
+@media only screen and (max-width: 370px)
 {
     @mixin img-fluid {
         width: 100%;
@@ -226,7 +226,7 @@ input {
     }
     .img-height-card {
         @include img-fluid();
-        height: 200px;
+        height: 300px;
     }
     .image-height-details {
         @include img-fluid();
