@@ -3,8 +3,10 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 import '../NavBar/navbar.scss'
 import { useLocation } from "react-router";
+import { useHistory } from "react-router";
 const Navbar = (props) => {
-    const location=useLocation()
+    const location=useLocation();
+    const history=useHistory()
     const [login_state, set_login_state] = useState(false)
     useEffect(() => 
     {
@@ -22,6 +24,13 @@ const Navbar = (props) => {
     const collapse = () => {
         document.getElementById('collapse').classList.toggle('mobile-nav');
     }
+    const clearSessions=()=>
+    {
+        sessionStorage.clear();
+        set_login_state(false)
+        history.push('/');
+        window.alert("successfully logged out.")
+    }
     return (
         <>
             <nav className="navbar">
@@ -35,7 +44,7 @@ const Navbar = (props) => {
                         login_state ?
                             <>
                                 <li className="nav-item"><Link className="navbar-linkes nav_icon" to='/profile_page'><i class="fa fa-user-circle-o nav_icon" aria-hidden="true"></i></Link></li>
-                                <li className="nav-item"><Link className="navbar-linkes nav_icon" to='/'><i class="fa fa-sign-out nav_icon" aria-hidden="true"></i></Link></li>
+                                <li className="nav-item navbar-linkes nav_icon" onClick={clearSessions} to='/'><i class="fa fa-sign-out nav_icon"/></li>
                             </>
                             :
                             <>
