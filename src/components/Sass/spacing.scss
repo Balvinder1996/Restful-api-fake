@@ -24,7 +24,7 @@
     }
   }
   @for $i from 1 through 50 {
-    .pr-#{$i}
+    .pb-#{$i}
     {
        padding-bottom:#{$i}px;
     }

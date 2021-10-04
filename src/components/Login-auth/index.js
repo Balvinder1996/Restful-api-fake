@@ -49,14 +49,19 @@ const Login_auth = (props) => {
             [e.target.name]: e.target.value
         }))
     }
-    const login = (event, props) => {
+    const login = (event) => {
         event.preventDefault();
         const username = sessionStorage.getItem("username")
         const pass = sessionStorage.getItem("pass")
         if (auth.login_username == username && auth.login_password == pass) {
-            toast.success("successfully login")
-            setTimeout(() => {
-                history.push("/");
+            toast.success("successfully login");
+            let token=generate_token(32)
+            sessionStorage.setItem("token",token)
+            setTimeout((props) => {
+                history.push({
+                    pathname: '/',
+                    state:true,
+                  });
             }, 1000);
         }
         else {
@@ -67,6 +72,16 @@ const Login_auth = (props) => {
     const login_switch = () => {
         setLogin_state(true);
         document.getElementById("form").reset()
+    }
+    const generate_token=(length)=>
+    {
+        var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
+        var b = [];  
+        for (var i=0; i<length; i++) {
+            var j = (Math.random() * (a.length-1)).toFixed(0);
+            b[i] = a[j];
+        }
+        return b.join("");
     }
     return (
         <>

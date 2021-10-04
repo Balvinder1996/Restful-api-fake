@@ -3,7 +3,16 @@ import Navbar from '../NavBar'
 import Login_auth from '../Login-auth'
 import Product_list from '../Product/Product-List';
 import Product_Details from '../Product/Product-details';
-const Router_file = () => {
+import { useEffect } from 'react';
+import Profile from '../Profile/Profile_page';
+const Router_file = () => 
+{
+    useEffect(()=>
+    {
+        setTimeout(() => {
+            window.alert("Allow for location for better experience")
+        }, 1000);
+    },[])
     return (
         <>
             <Router>
@@ -12,6 +21,7 @@ const Router_file = () => {
                     <Route exact path="/" component={Product_list} />
                     <Route exact path="/product-details/:identity" component={Product_Details} />
                     <Route exact path="/login" component={Login_auth} />
+                    <Route exact path="/profile_page" component={Profile} />
                 </Switch>
             </Router>
         </>
