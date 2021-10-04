@@ -55,13 +55,13 @@ const Login_auth = (props) => {
         const pass = sessionStorage.getItem("pass")
         if (auth.login_username == username && auth.login_password == pass) {
             toast.success("successfully login");
-            let token=generate_token(32)
-            sessionStorage.setItem("token",token)
+            let token = generate_token(32)
+            sessionStorage.setItem("token", token)
             setTimeout((props) => {
                 history.push({
                     pathname: '/',
-                    state:true,
-                  });
+                    state: true,
+                });
             }, 1000);
         }
         else {
@@ -73,12 +73,11 @@ const Login_auth = (props) => {
         setLogin_state(true);
         document.getElementById("form").reset()
     }
-    const generate_token=(length)=>
-    {
+    const generate_token = (length) => {
         var a = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890".split("");
-        var b = [];  
-        for (var i=0; i<length; i++) {
-            var j = (Math.random() * (a.length-1)).toFixed(0);
+        var b = [];
+        for (var i = 0; i < length; i++) {
+            var j = (Math.random() * (a.length - 1)).toFixed(0);
             b[i] = a[j];
         }
         return b.join("");
@@ -125,7 +124,12 @@ const Login_auth = (props) => {
                                     </div>
                                     <button className="mt-10 mb-10" type="submit">Login</button>
                                     <div className="mt-10">
-                                        <p className="theme_color pointer-cursor " onClick={() => { setLogin_state(false) }} >Register Yourself?</p>
+                                        <p className="theme_color pointer-cursor "
+                                            onClick={() => {
+                                                setLogin_state(false);
+                                                document.getElementById("form").reset()
+                                            }} >
+                                            Register Yourself?</p>
                                     </div>
                                 </div>
                             </form>
