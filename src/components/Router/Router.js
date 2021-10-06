@@ -7,12 +7,6 @@ import { useEffect } from 'react';
 import Profile from '../Profile/Profile_page';
 const Router_file = () => 
 {
-    useEffect(()=>
-    {
-        setTimeout(() => {
-            window.alert("Allow for location for better experience")
-        }, 1000);
-    },[])
     return (
         <>
             <Router>

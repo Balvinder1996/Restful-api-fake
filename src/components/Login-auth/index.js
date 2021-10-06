@@ -3,7 +3,9 @@ import { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useHistory } from "react-router";
-import '../Login-auth/login.scss'
+import '../Login-auth/login.scss';
+import { Formik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 const Login_auth = (props) => {
     const history = useHistory();
     //registration coding goes here
@@ -82,6 +84,15 @@ const Login_auth = (props) => {
         }
         return b.join("");
     }
+    // formik coding starts here
+    const DisplayingErrorMessagesSchema = Yup.object().shape({
+        username: Yup.string()
+          .min(2, 'Too Short!')
+          .max(50, 'Too Long!')
+          .required('Required'),
+        email: Yup.string().email('Invalid email').required('Required'),
+      }); 
+    // formik coding ends here
     return (
         <>
             <ToastContainer />
@@ -89,6 +100,34 @@ const Login_auth = (props) => {
                 {
                     login_state ?
                         <div class="login-box pt-30">
+                             <Formik
+       initialValues={{
+         username: '',
+         email: '',
+       }}
+       validationSchema={DisplayingErrorMessagesSchema}
+       onSubmit={values => {
+         // same shape as initial values
+         console.log(values);
+       }}
+     >
+       {({ errors, touched }) => (
+         <Form  onSubmit={login} id="form">
+           <Field name="username"  placeholder="Username"
+                                        autoComplete="off"
+                                        name="login_username"
+                                        onChange={login_state_update}/>
+           {/* If this field has been touched, and it contains an error, display it
+            */}
+           {touched.username && errors.username && <div>{errors.username}</div>}
+           <Field name="email" />
+           {/* If this field has been touched, and it contains an error, display
+           it */}
+           {touched.email && errors.email && <div>{errors.email}</div>}
+           <button type="submit">Submit</button>
+         </Form>
+       )}
+     </Formik>
                             <form onSubmit={login} id="form">
                                 <div class="login">
                                     <h1>LogIn</h1>
@@ -96,7 +135,6 @@ const Login_auth = (props) => {
                                         type="text"
                                         placeholder="Username"
                                         autoComplete="off"
-
                                         name="login_username"
                                         onChange={login_state_update}
                                         required />
